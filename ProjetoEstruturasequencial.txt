@@ -1,0 +1,12 @@
+Objetivo do sistema
+Controle de operações com opções de ações (calls e puts), com funcionalidades como:
+
+Cadastro de ativos e opções
+
+Registro de operações (compra/venda)
+
+Vencimentos e alertas
+
+Cálculo de lucro/prejuízo
+
+Dashboard com gráficos e relatórios
