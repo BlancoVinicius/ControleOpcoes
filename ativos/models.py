@@ -4,8 +4,8 @@ from django.db import models
 from django.db import models
 
 class AtivoBase(models.Model):
-    codigo = models.CharField(max_length=20, unique=True)
-    nome = models.CharField(max_length=100)
+    codigo = models.CharField(max_length=20, unique=True, blank=False, null=False)
+    nome = models.CharField(max_length=100, blank=False)
 
     class Meta:
         abstract = True
@@ -18,14 +18,21 @@ class Acao(AtivoBase):
     # você pode adicionar campos específicos de ação, se precisar
 
 class Opcao(AtivoBase):
+    MOD_CHOICES = [
+        ('AME', 'Americana'),
+        ('EUR', 'Européia'),
+    ]
+
     TIPO_CHOICES = [
         ('CALL', 'Call'),
         ('PUT', 'Put'),
     ]
-    ativo_subjacente = models.ForeignKey(Acao, on_delete=models.CASCADE, related_name='opcoes')
-    tipo = models.CharField(max_length=4, choices=TIPO_CHOICES)
-    strike = models.DecimalField(max_digits=10, decimal_places=2)
-    vencimento = models.DateField()
+    
+    ativo_subjacente = models.ForeignKey(Acao, on_delete=models.PROTECT, related_name='opcoes', blank=False,null=False)
+    tipo = models.CharField(max_length=4, choices=TIPO_CHOICES, blank=False, null=False)
+    modelo = models.CharField(max_length=3, choices=MOD_CHOICES, blank=False, null=False)
+    strike = models.DecimalField(max_digits=10, decimal_places=2, blank=False, null=False)
+    vencimento = models.DateField(blank=False, null=False)
 
     class Meta:
-        unique_together = ('ativo_subjacente', 'tipo', 'strike', 'vencimento')
+        unique_together = ('ativo_subjacente', 'tipo', 'strike', 'vencimento', 'codigo')
