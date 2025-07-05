@@ -6,7 +6,7 @@ from ativos.urls import router as ativos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(ativos.urls)),
+    path('ativos/', include(ativos.urls)),
     path('operacoes/', include('operacoes.urls')),
 
 ] 
