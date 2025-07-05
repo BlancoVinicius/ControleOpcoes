@@ -5,6 +5,7 @@ from django.db import models
 from ativos.models import Opcao  # ou Acao, dependendo do ativo
 
 class Operacao(models.Model):
+    
     TIPO_OPERACAO = (
         ('C', 'Compra'),
         ('V', 'Venda'),

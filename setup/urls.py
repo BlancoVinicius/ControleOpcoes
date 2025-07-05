@@ -2,12 +2,11 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from ativos.urls import router as seu_app_router
+from ativos.urls import router as ativos
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('ativos/', include('ativos.urls')),
-    path('api/', include(seu_app_router.urls)),
+    path('api/', include(ativos.urls)),
     path('operacoes/', include('operacoes.urls')),
 
 ] 

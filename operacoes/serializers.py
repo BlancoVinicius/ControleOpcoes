@@ -9,11 +9,6 @@ class OperacaoSerializer(serializers.ModelSerializer):
         queryset=Opcao.objects.all(),
         slug_field='codigo'
     )
-
-    # ativo_subjacente = serializers.SlugRelatedField(
-    #     queryset=Operacao.objects.all(),
-    #     slug_field='codigo'
-    # )
     class Meta:
         model = Operacao
         fields = '__all__'

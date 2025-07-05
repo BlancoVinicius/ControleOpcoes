@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 from django.db import models
 
 class AtivoBase(models.Model):
@@ -15,7 +14,7 @@ class AtivoBase(models.Model):
 
 class Acao(AtivoBase):
     setor = models.CharField(max_length=50, blank=True, null=True)
-    # você pode adicionar campos específicos de ação, se precisar
+    sub_setor = models.CharField(max_length=50, blank=True, null=True)
 
 class Opcao(AtivoBase):
     MOD_CHOICES = [
