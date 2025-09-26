@@ -10,3 +10,34 @@ Vencimentos e alertas
 Cálculo de lucro/prejuízo
 
 Dashboard com gráficos e relatórios
+=========================================================
+PRD – Sistema de Controle de Operações com Opções de Ações
+1. Objetivo
+Desenvolver um sistema para controle de operações com opções de ações (calls e puts), permitindo o cadastro de ativos e opções, registro de operações, acompanhamento de vencimentos, cálculo de lucro/prejuízo e visualização de dados em dashboards.
+
+2. Funcionalidades Principais
+2.1 Cadastro de Ativos e Opções
+Permitir o cadastro, edição e exclusão de ativos (ações) e opções (calls e puts).
+Armazenar informações como código do ativo, tipo de opção, strike, data de vencimento, etc.
+2.2 Registro de Operações
+Registrar operações de compra e venda de opções.
+Informar quantidade, preço, data, corretora e tipo de operação.
+2.3 Vencimentos e Alertas
+Listar opções com vencimento próximo.
+Enviar alertas (notificações ou e-mails) para vencimentos iminentes.
+2.4 Cálculo de Lucro/Prejuízo
+Calcular automaticamente o resultado financeiro de cada operação.
+Exibir histórico de lucros e prejuízos por ativo, opção e período.
+2.5 Dashboard com Gráficos e Relatórios
+Visualizar gráficos de desempenho, distribuição de operações, lucros/prejuízos.
+Gerar relatórios customizáveis para exportação (PDF/Excel).
+3. Requisitos Não Funcionais
+Interface web responsiva.
+Autenticação de usuários.
+Backup e segurança dos dados.
+Performance adequada para múltiplos usuários.
+4. Critérios de Aceitação
+Usuário consegue cadastrar ativos e opções.
+Usuário registra operações e visualiza cálculos de resultado.
+Alertas de vencimento funcionam corretamente.
+Dashboard exibe gráficos e relatórios conforme esperado.
