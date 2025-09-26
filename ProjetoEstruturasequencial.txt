@@ -41,3 +41,130 @@ Usuário consegue cadastrar ativos e opções.
 Usuário registra operações e visualiza cálculos de resultado.
 Alertas de vencimento funcionam corretamente.
 Dashboard exibe gráficos e relatórios conforme esperado.
+
+
+=-====================
+PRD – Sistema de Controle de Operações com Opções de Ações
+1. Objetivo
+
+Desenvolver um sistema web responsivo para controle e análise de operações com opções de ações (calls e puts), oferecendo funcionalidades como cadastro de ativos e opções, registro de operações, monitoramento de vencimentos, cálculo automático de lucro/prejuízo, geração de relatórios e dashboards interativos.
+
+2. Público-Alvo
+
+Investidores pessoa física com conhecimento em derivativos.
+
+Traders autônomos.
+
+Analistas de investimentos.
+
+3. Funcionalidades Principais
+3.1 Cadastro de Ativos e Opções
+
+Permitir criação, edição e exclusão de:
+
+Ativos (ações): código (ticker), nome da empresa, setor, etc.
+
+Opções: tipo (CALL ou PUT), strike, vencimento, código B3, ativo relacionado, tipo de mercado (mercado de balcão ou B3), estilo (europeu/americano).
+
+Validações:
+
+Strike deve ser número positivo.
+
+Data de vencimento não pode ser retroativa.
+
+3.2 Registro de Operações
+
+Campos obrigatórios:
+
+Tipo de operação: Compra / Venda
+
+Quantidade
+
+Preço unitário
+
+Data
+
+Corretora
+
+Código da opção (relacionada a um ativo)
+
+Regras:
+
+Operações devem respeitar formato padrão B3 (ex: lotes de 100?).
+
+Deve ser possível editar ou excluir registros.
+
+3.3 Vencimentos e Alertas
+
+Visualização de opções com vencimento em:
+
+Menos de 7 dias
+
+No mês atual
+
+Envio de alertas via:
+
+E-mail
+
+Notificações no sistema (caso o usuário esteja logado)
+
+Configuração do usuário:
+
+Permitir ativar/desativar alertas
+
+Selecionar com quantos dias de antecedência será alertado
+
+3.4 Cálculo de Lucro/Prejuízo
+
+Cálculo automático com base em:
+
+Preço de entrada/saída
+
+Quantidade
+
+Tipo da operação (compra/venda)
+
+Resultado: [(Preço Venda - Preço Compra) × Quantidade × 100]
+
+Apresentação:
+
+Histórico consolidado por ativo
+
+Filtro por data, ativo, corretora, tipo de opção
+
+Exibição de IR (Imposto de Renda) estimado
+
+3.5 Dashboard com Gráficos e Relatórios
+
+Gráficos:
+
+Lucro/Prejuízo por mês
+
+Distribuição de operações (call/put, compra/venda)
+
+Performance por ativo
+
+Relatórios exportáveis:
+
+PDF
+
+Excel (com filtros aplicados)
+
+Opção de dashboard personalizado por usuário
+
+4. Requisitos Não Funcionais
+Requisito	Descrição
+Interface	Web responsiva (desktop e mobile), com design limpo e intuitivo
+Autenticação	Login por e-mail/senha, com recuperação de senha
+Segurança	Senhas criptografadas, proteção contra CSRF e SQL Injection
+Backup	Backups automáticos diários
+Performance	Suporte a múltiplos usuários simultâneos sem degradação
+Compatibilidade	Suporte aos principais navegadores modernos (Chrome, Firefox, Edge)
+5. Critérios de Aceitação
+ID	Critério
+CA-01	Usuário consegue cadastrar ativos e opções com validação de dados
+CA-02	Sistema permite registrar, editar e excluir operações
+CA-03	Alertas de vencimento são enviados corretamente, com opção de configurar dias de antecedência
+CA-04	Dashboard exibe gráficos corretos baseados nos dados inseridos
+CA-05	Cálculo de lucro/prejuízo está coerente com os dados e operações
+CA-06	Relatórios são gerados corretamente em PDF e Excel
